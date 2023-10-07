@@ -1,18 +1,19 @@
-const hamburgerMenu = document.getElementById('hamburgerMenu');
-const menuWrapper = document.querySelector('.menu-wrapper');
+const hamburgerDropdown = document.getElementById('hamburgerDropdown');
 
 hamburgerMenu.addEventListener('click', () => {
-    if (menuWrapper.style.display === 'none' || menuWrapper.style.display === '') {
-        menuWrapper.style.display = 'block';
-        hamburgerMenu.classList.add('active');  // add the active class
+    if (hamburgerDropdown.style.display == 'none' ||
+        hamburgerDropdown.style.display == '') {
+            hamburgerDropdown.style.display = 'block';
+            hamburgerMenu.classList.add('active');
     } else {
-        menuWrapper.style.display = 'none';
-        hamburgerMenu.classList.remove('active');  // remove the active class
+        hamburgerDropdown.style.display = 'none';
+        hamburgerMenu.classList.remove('active');
     }
 });
+
 window.addEventListener('resize', () => {
-    if (window.innerWidth > 863) { // Check for your breakpoint
-        menuWrapper.removeAttribute('style'); // Removes inline styles
-        hamburgerMenu.classList.remove('active');  // remove the active class
+    if (window.innerWidth > 863) {
+        hamburgerDropdown.style.display = 'none';
+        hamburgerMenu.classList.remove('active');
     }
 });
