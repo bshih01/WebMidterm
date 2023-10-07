@@ -1,10 +1,18 @@
 const hamburgerMenu = document.getElementById('hamburgerMenu');
-const navbarLinks = document.getElementById('navbarLinks');
+const menuWrapper = document.querySelector('.menu-wrapper');
 
 hamburgerMenu.addEventListener('click', () => {
-    if (navbarLinks.style.display === 'none' || navbarLinks.style.display === '') {
-        navbarLinks.style.display = 'block';
+    if (menuWrapper.style.display === 'none' || menuWrapper.style.display === '') {
+        menuWrapper.style.display = 'block';
+        hamburgerMenu.classList.add('active');  // add the active class
     } else {
-        navbarLinks.style.display = 'none';
+        menuWrapper.style.display = 'none';
+        hamburgerMenu.classList.remove('active');  // remove the active class
+    }
+});
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 863) { // Check for your breakpoint
+        menuWrapper.removeAttribute('style'); // Removes inline styles
+        hamburgerMenu.classList.remove('active');  // remove the active class
     }
 });
