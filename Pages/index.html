@@ -7,28 +7,59 @@
     <title>RateMyRoom</title>
 </head>
 <body>
-    <nav id=navbarLinks class="navbar">
-        <h1 class="rateMyRoom">RateMyRoom</h1>
-        <div class="menu-wrapper">
-            <a href="index.html">Home</a>
-            <a href="ratedorms.html">RateDorms</a>
-            <a href="discussion.html">Discussion</a>
-            <a href="feedback.html">Feedback</a>
-            <a href="buy.html">Buy</a>
-            <a href="sell.html">Sell</a>
-            <a href="offcampus.html">Off-Campus Housing</a>
+    <nav id="navbarLinks" class="navbar">
+        <a href="index.html" id="logo-link" class="navbar-logo">
+            <img src="../media/rmr.png" alt="Site Logo" class="navbar-logo">
+        </a>
+    
+        <a href="index.html">Home</a>
+    
+        <div class="dropdown">
+            <a href="#">Reviews ▼</a>
+            <div class="dropdown-content">
+                <a href="ratedorms.html">RateDorms</a>
+                <a href="discussion.html">Discussion</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="offcampus.html">Off-Campus Housing</a>
+            </div>
         </div>
+    
+        <div class="dropdown">
+            <a href="#">Market ▼</a>
+            <div class="dropdown-content">
+                <a href="buy.html">Buy</a>
+                <a href="sell.html">Sell</a>
+            </div>
+        </div>
+    
+        <a href="contact.html">Contact</a>
+        
         <div id="hamburgerMenu" class="hamburger-menu">&#9776;</div>
     </nav>
+    
     <div id="hamburgerDropdown" class="hamburger-dropdown">
         <a href="index.html">Home</a>
-        <a href="ratedorms.html">RateDorms</a>
-        <a href="discussion.html">Discussion</a>
-        <a href="feedback.html">Feedback</a>
-        <a href="buy.html">Buy</a>
-        <a href="sell.html">Sell</a>
+        <div class="dropdown">
+            <a href="#">Reviews</a>
+            <div class="dropdown-content">
+                <a href="ratedorms.html">RateDorms</a>
+                <a href="discussion.html">Discussion</a>
+                <a href="feedback.html">Feedback</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Market</a>
+            <div class="dropdown-content">
+                <a href="buy.html">Buy</a>
+                <a href="sell.html">Sell</a>
+            </div>
+        </div>
         <a href="offcampus.html">Off-Campus Housing</a>
     </div>
+    
+    <header class="site-header">
+        <h2>Heading for RmR</h2>
+    </header>    
     <script type="text/javascript" src="../index.js"></script>
 </body>
 </html>
