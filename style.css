@@ -35,6 +35,10 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     transition: color 0.2s ease-in-out;
 }
+.expand-arrow {
+    width: 20px;
+    vertical-align: middle;
+}
 #logo-link {
     padding: 20px;
 }
