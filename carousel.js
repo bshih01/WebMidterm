@@ -14,7 +14,7 @@ $(document).ready(() => {
     ];
 
     const populateCarousel = image => {
-        const imageContainer = document.createElement('div');
+        const imageContainer = document.createElement('ul');
         imageContainer.className = 'image-container';
 
         const img = document.createElement('img');
