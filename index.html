@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>RateMyRoom</title>
+</head>
+<body>
+    <nav id="navbarLinks" class="navbar">
+        <a href="index.html" id="logo-link" class="navbar-logo">
+            <img src="media/rmr.png" alt="Site Logo" class="navbar-logo">
+        </a>
+    
+        <a href="index.html">Home</a>
+    
+        <div class="dropdown">
+            <a href="#">Reviews <img class="expand-arrow" src="media/expand.png"></a>
+            <div class="dropdown-content">
+                <a href="pages/ratedorms.html">RateDorms</a>
+                <a href="pages/discussion.html">Discussion</a>
+                <a href="pages/feedback.html">Feedback</a>
+                <a href="pages/offcampus.html">Off-Campus Housing</a>
+            </div>
+        </div>
+    
+        <div class="dropdown">
+            <a href="#">Market <img class="expand-arrow" src="media/expand.png"></a>
+            <div class="dropdown-content">
+                <a href="pages/buy.html">Buy</a>
+                <a href="pages/sell.html">Sell</a>
+            </div>
+        </div>
+    
+        <a href="contact.html">Contact</a>
+        
+        <div id="hamburgerMenu" class="hamburger-menu">&#9776;</div>
+    </nav>
+    
+    <div id="hamburgerDropdown" class="hamburger-dropdown">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <a href="#">Reviews</a>
+            <div class="dropdown-content">
+                <a href="pages/ratedorms.html">RateDorms</a>
+                <a href="pages/discussion.html">Discussion</a>
+                <a href="pages/feedback.html">Feedback</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Market</a>
+            <div class="dropdown-content">
+                <a href="pages/buy.html">Buy</a>
+                <a href="pages/sell.html">Sell</a>
+            </div>
+        </div>
+        <a href="pages/offcampus.html">Off-Campus Housing</a>
+    </div>
+    
+    <!-- <header class="site-header">
+        <h2>Heading for RmR</h2>
+    </header> -->
+
+    <div class="hero-section">
+        <div class="hero-text">
+            <h1 class="hero-title">Rate your Dorm</h1>
+            <a href="pages/ratedorms.html"><button class="review-button">Leave a review</button></a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="carousel">
+            <div class="carousel-container" id="carouselImages"></div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="carousel.js"></script>
+    <script type="text/javascript" src="navbar.js"></script>
+</body>
+</html>
+
