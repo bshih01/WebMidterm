@@ -30,6 +30,8 @@ $(document).ready(() => {
         carouselContainer.appendChild(imageContainer);
     };
 
+    
+
     /* adding two copies of each image to allow for smooth scrolling */
     for (let i = 0; i < 2; i++) {
         images.forEach(populateCarousel);
