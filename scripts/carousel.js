@@ -2,15 +2,15 @@ $(document).ready(() => {
     const carouselContainer = document.getElementById('carouselImages');
     
     const images = [
-        { src: "media/bush.jpg", text: "Bush Hall" },
-        { src: "media/carm.jpg", text: "Carmichael Hall" },
-        { src: "media/harleston.jpg", text: "Harleston Hall" },
-        { src: "media/hodge.jpg", text: "Hodgedon Hall" },
-        { src: "media/miller.jpg", text: "Miller Hall" },
-        { src: "media/sophia.jpg", text: "Sophia Gordon Hall" },
-        { src: "media/tilton.jpg", text: "Tilton Hall" },
-        { src: "media/houston.jpg", text: "Houston Hall" },
-        { src: "media/hill.jpg", text: "Hill Hall" }
+        { src: "media/dorms/bush.jpg", text: "Bush Hall" },
+        { src: "media/dorms/carm.jpg", text: "Carmichael Hall" },
+        { src: "media/dorms/harleston.jpg", text: "Harleston Hall" },
+        { src: "media/dorms/hodge.jpg", text: "Hodgedon Hall" },
+        { src: "media/dorms/miller.jpg", text: "Miller Hall" },
+        { src: "media/dorms/sophia.jpg", text: "Sophia Gordon Hall" },
+        { src: "media/dorms/tilton.jpg", text: "Tilton Hall" },
+        { src: "media/dorms/houston.jpg", text: "Houston Hall" },
+        { src: "media/dorms/hill.jpg", text: "Hill Hall" }
     ];
 
     const populateCarousel = image => {
@@ -29,9 +29,7 @@ $(document).ready(() => {
 
         carouselContainer.appendChild(imageContainer);
     };
-
     
-
     /* adding two copies of each image to allow for smooth scrolling */
     for (let i = 0; i < 2; i++) {
         images.forEach(populateCarousel);

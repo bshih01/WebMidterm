@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../style.css">
-    <link rel="stylesheet" type="text/css" href="../offcampus.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/offcampus.css">
     <title>RateMyRoom</title>
 </head>
 <body>
     <nav id="navbarLinks" class="navbar">
         <a href="../index.html" id="logo-link" class="navbar-logo">
-            <img src="../media/rmr.png" alt="Site Logo" class="navbar-logo">
+            <img src="../media/extras/rmr.png" alt="Site Logo" class="navbar-logo">
         </a>
     
         <a href="../index.html">Home</a>
@@ -18,7 +18,7 @@
         <a href="aboutUs.html">About Us</a>
 
         <div class="dropdown">
-            <a href="#">Reviews <img class="expand-arrow" src="../media/expand.png"></a>
+            <a href="#">Reviews <img class="expand-arrow" src="../media/extras/expand.png"></a>
             <div class="dropdown-content">
                 <a href="ratedorms.html">RateDorms</a>
                 <a href="discussion.html">Discussion</a>
@@ -28,7 +28,7 @@
         </div>
     
         <div class="dropdown">
-            <a href="#">Market <img class="expand-arrow" src="../media/expand.png"></a>
+            <a href="#">Market <img class="expand-arrow" src="../media/extras/expand.png"></a>
             <div class="dropdown-content">
                 <a href="buy.html">Buy</a>
                 <a href="sell.html">Sell</a>
@@ -58,27 +58,29 @@
                 <a href="sell.html">Sell</a>
             </div>
         </div>
-        <a href="pages/offcampus.html">Off-Campus Housing</a>
+        <a href="offcampus.html">Off-Campus Housing</a>
     </div> 
-
-    <div class="listings-container">
-        <!-- JavaScript will populate this with the 16 initial squares -->
-    </div>
 
     <button id="addListingBtn">Add Listing</button>
 
     <div id="formContainer" class="hidden">
         <form id="subletForm">
-            <input type="file" id="imageUpload" accept="image/*">
+            <input type="text" id="imageUpload" placeholder="Enter image URL">
             <textarea id="description" placeholder="Description of the room"></textarea>
             <input type="text" id="roommates" placeholder="Roommates">
             <input type="text" id="cost" placeholder="Cost per month">
             <input type="text" id="availability" placeholder="Available date range">
+            <input type="text" id="contact" placeholder="Contact">
             <button type="submit">Submit</button>
         </form>
     </div>
 
-    <script type="text/javascript" src="../offcampus.js"></script>
-    <script type="text/javascript" src="../navbar.js"></script>
+    <div class="listings-container">
+        <!-- JavaScript will populate this with the 16 initial squares -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../scripts/offcampus.js"></script>
+    <script type="text/javascript" src="../scripts/navbar.js"></script>
 </body>
 </html>

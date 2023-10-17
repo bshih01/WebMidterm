@@ -197,7 +197,7 @@
 }
 
 .hero-section {
-    background-image: url('media/tufts.jpg');
+    background-image: url('../media/extras/tufts.jpg');
     background-size: cover;
     background-position: center;
     height: 750px;
