@@ -12,6 +12,8 @@ Sources:
         https://www.w3schools.com/css/css3_mediaqueries.asp
     Dropdown menu:
         https://www.bing.com/videos/riverview/relatedvideo?&q=creating+a+dropdown+menu+js&&mid=6ACF1A1849E879938D086ACF1A1849E879938D08&&FORM=VRDGAR
+    Centering HTML elements:
+        https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateY
     JS referencing DOM:
         https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
         https://www.w3schools.com/jsref/met_document_getelementbyid.asp

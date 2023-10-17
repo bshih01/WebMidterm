@@ -135,7 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const formContainer = document.getElementById('formContainer');
     const subletForm = document.getElementById('subletForm');
     
-    // Function to create and add a new listing
     function addListing(image, description, roommates, cost, availability, contact) {
         const listing = document.createElement('div');
         listing.classList.add('listing');
@@ -168,17 +167,14 @@ document.addEventListener('DOMContentLoaded', () => {
         listingsContainer.appendChild(listing);
     }
 
-    // Initialize the page with 16 default listings
     for (const room of rooms) {
         addListing(room.src, room.desc, room.roommates, room.cost, room.date, room.contact);
     }
 
-    // Event Listener to show the form when 'Add Listing' button is clicked
     addListingBtn.addEventListener('click', function() {
         formContainer.classList.toggle('hidden');
     });
 
-    // Event Listener to handle form submission
     subletForm.addEventListener('submit', function(event) {
         event.preventDefault();
 
@@ -190,7 +186,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         addListing(image, description, roommates, cost, availability);
 
-        // Reset the form
         subletForm.reset();
         formContainer.classList.add('hidden');
     });
@@ -205,11 +200,10 @@ document.addEventListener('DOMContentLoaded', () => {
             img.src = e.target.src;
     
             overlay.appendChild(img);
-            $(overlay).hide(); // hide it initially
+            $(overlay).hide();
             document.body.appendChild(overlay);
-            $(overlay).fadeIn(300); // fade in with 600ms duration
+            $(overlay).fadeIn(300);
 
-            // Close lightbox when clicked on overlay
             $(overlay).on('click', function() {
                 $(this).fadeOut(300, function() { 
                     $(this).remove(); 
@@ -218,18 +212,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         }
     });
+
     addListingBtn.addEventListener('click', function() {
-        $(formContainer).fadeIn(300);  // Fade in the form container
+        $(formContainer).fadeIn(300);
     });
     
-    // Event to close form lightbox
     formContainer.addEventListener('click', function (e) {
         if (e.target === formContainer) {
             $(formContainer).fadeOut(300);
         }
     });
     
-    // Event Listener to handle form submission
     subletForm.addEventListener('submit', function(event) {
         event.preventDefault();
 
@@ -240,14 +233,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const cost = document.getElementById('cost').value;
         const availability = document.getElementById('availability').value;
         const contact = document.getElementById('contact').value;
-
-        // As the src for an image would be a path, we need to create an object URL for the uploaded image
         const imageUrl = URL.createObjectURL(image);
 
         addListing(imageUrl, description, roommates, cost, availability,
                    contact);
 
-        // Reset the form and hide it
         subletForm.reset();
         $(formContainer).fadeOut(300);
         formContainer.classList.add('hidden');

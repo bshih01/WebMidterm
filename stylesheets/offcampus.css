@@ -96,6 +96,14 @@ button {
     margin: 0 auto;
 }
 
+#formContainer input, textarea {
+    max-width: 95%;
+    padding: 10px;
+    margin-right: 2%;
+    box-sizing: border-box;
+}
+
+
 @media (max-width: 1280px) {
     .listings-container {
         grid-template-columns: repeat(3, 1fr);
