@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="../offcampus.css">
     <title>RateMyRoom</title>
 </head>
 <body>
@@ -59,6 +60,25 @@
         </div>
         <a href="pages/offcampus.html">Off-Campus Housing</a>
     </div> 
+
+    <div class="listings-container">
+        <!-- JavaScript will populate this with the 16 initial squares -->
+    </div>
+
+    <button id="addListingBtn">Add Listing</button>
+
+    <div id="formContainer" class="hidden">
+        <form id="subletForm">
+            <input type="file" id="imageUpload" accept="image/*">
+            <textarea id="description" placeholder="Description of the room"></textarea>
+            <input type="text" id="roommates" placeholder="Roommates">
+            <input type="text" id="cost" placeholder="Cost per month">
+            <input type="text" id="availability" placeholder="Available date range">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script type="text/javascript" src="../offcampus.js"></script>
     <script type="text/javascript" src="../navbar.js"></script>
 </body>
 </html>
