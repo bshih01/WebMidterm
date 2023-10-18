@@ -5,6 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
     <title>RateMyRoom</title>
+
+    <style>
+        .body-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 85px;
+            margin-bottom: 50px;
+        }
+
+        .title {
+            margin-top: 40px;
+            color: black;
+            font-size: 45px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+
+        .form-container form input[type=text],
+        .form-container form input[type=email],
+        .form-container form textarea {
+            width: 385px;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 2.3px;
+            border-style: solid;
+            border-color: #120B46;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #ddd;
+        }
+
+        .form-container form textarea {
+            height: 150px;
+            resize: none;
+        }
+
+        .form-container form button[type=submit] {
+            background-color: #120B46;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin-top: 10px;
+            margin-bottom: 85px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container form button[type=submit]:hover {
+            background-color: #444;
+        }
+
+
+
+        /* Responsiveness: */
+        @media only screen and (max-width: 767px) {
+            .body-container .title
+            {
+                font-size: 20px;
+            }
+        }
+    </style>
+
 </head>
 <body>
     <nav id="navbarLinks" class="navbar">
@@ -60,5 +134,25 @@
         <a href="offcampus.html">Off-Campus Housing</a>
     </div> 
     <script type="text/javascript" src="../scripts/navbar.js"></script>
+
+
+    <div class="body-container">
+        <div class="title">
+                <p>We appreciate all Feedbacks <br/> Thank You!</p>
+        </div>
+
+        <div class="form-container">
+                <form>
+                        <input type="text" id="name" name="name" placeholder="Name" required>
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        <input type="email" id="mail" name="mail" placeholder="Email" required>
+                        <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
+                        <button type="submit">Submit Now</button>
+                </form>
+        </div>
+    </div>
+
+
+
 </body>
 </html>
