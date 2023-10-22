@@ -7,68 +7,72 @@
     <title>RateMyRoom</title>
 
     <style>
-        .body-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        body, html {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
             margin-top: 85px;
             margin-bottom: 50px;
+            height: 100%
         }
 
-        .title {
-            margin-top: 40px;
-            color: black;
-            font-size: 45px;
-            font-weight: 600;
+        .body-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            border-radius: 5px;
+        }
+
+        .title p {
             text-align: center;
+            font-size: 24px;
+            color: #333;
+            margin: 0;
+            padding: 20px 0;
+            line-height: 1.4;
         }
 
         .form-container form {
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 100%;
         }
 
-
-        .form-container form input[type=text],
-        .form-container form input[type=email],
-        .form-container form textarea {
-            width: 385px;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 2.3px;
-            border-style: solid;
-            border-color: #120B46;
+        input, textarea, button {
+            width: 80%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #d1d1d1;
             border-radius: 5px;
-            box-shadow: 0 0 5px #ddd;
+            font-size: 16px;
         }
 
-        .form-container form textarea {
-            height: 150px;
-            resize: none;
+        input:focus, textarea:focus {
+            border-color: #007BFF;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0,123,255,0.5);
         }
 
-        .form-container form button[type=submit] {
-            background-color: #120B46;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            margin-top: 10px;
-            margin-bottom: 85px;
-            font-size: 13px;
-            font-weight: 600;
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        button {
+            background-color: #2f7cac;
+            color: #ffffff;
             cursor: pointer;
+            border: none;
             transition: background-color 0.3s ease;
         }
 
-        .form-container form button[type=submit]:hover {
-            background-color: #444;
+        button:hover {
+            background-color: #0056b3;
         }
-
-
 
         /* Responsiveness: */
         @media only screen and (max-width: 767px) {
