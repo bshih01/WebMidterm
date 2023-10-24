@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
         availEl.innerHTML = `<strong>Contact: </strong><div class="apartment-text">${contact}</div>`;
         listing.appendChild(contactEl);
 
-        listingsContainer.appendChild(listing);
+        listingsContainer.insertBefore(listing, listingsContainer.firstChild);
     }
 
     for (const room of rooms) {
