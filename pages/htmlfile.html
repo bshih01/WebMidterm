@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="stylereview.css">
+    <title>RateMyRoom</title>
+</head>
+<body>
+
+    <div class="title">
+        <p>Rate Your Housing</p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <form method='get' action='' id='reviewform'>
+        <!--most of the other elements-->
+        <script type="text/javascript" src="reviewform.js"></script>
+
+        <!--slider for rating-->
+        
+        <div class="slidecontainer">
+            <label for ='range'>How would you rate your housing?</label> <br>
+            <input type="range" min="1" max="5" value="3" class="slider" id="rating">
+        </div>
+        <br>
+        <!--comments area-->
+        <div class = "comments">
+            <label for="comments">Any comments about your review?</label>
+            <br>
+            <textarea id="comments" name="comments" rows="8" cols="50"
+            placeholder="Write your comments here"></textarea>
+            <br>
+        </div>
+        <input type="submit" value="Submit now">
+    </form>
+
+    
+</body>
+</html>
