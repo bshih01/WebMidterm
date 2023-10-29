@@ -77,26 +77,26 @@ h2 {
 
 @media screen and (max-width: 1000px) {
   .founder-grid {
-      grid-template-columns: 1fr 1fr;  
-      gap: 1.5rem;  
-  }
-
-  .text_for_mission {
-      padding: 1.5rem;
-      font-size: 17px;  
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 700px) {  /* Adjust for very small screens */
   .founder-grid {
-      grid-template-columns: 1fr;  
-      gap: 1.5rem;  
+    grid-template-columns: 1fr;  
+    gap: 1.5rem;  
+  }
+  
+  .about-us-section {
+    padding: 1rem;
   }
 
   .text_for_mission {
-      padding: 1.5rem;
-      font-size: 17px;  
+    padding: 1rem;
+    font-size: 16px;
   }
 }
+
 
 
