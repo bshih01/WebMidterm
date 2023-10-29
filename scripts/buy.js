@@ -1,4 +1,4 @@
-var furniture = [
+var buy = [
         {
             src: '../media/furniture/b1.jpg',
             desc: 'Classic light grey couch',
@@ -85,7 +85,7 @@ var furniture = [
             src: '../media/furniture/b13.jpg',
             desc: 'Modern beige bed-side table',
             price: 45,
-            contact: '@furnituremyfurnitureplease'
+            contact: '@buymyfurnitureplease'
         },
         {
             src: '../media/furniture/b14.jpg',
@@ -106,7 +106,6 @@ var furniture = [
         const listingsContainer = document.querySelector('.available-furniture');
 
         function addAvailableFurniture(image, description, price, contact) {
-            console.log(contact);
             const furniture = document.createElement("div");
             furniture.classList.add("furniture");
 
@@ -119,17 +118,24 @@ var furniture = [
             furniture.appendChild(descript);
 
             const cost = document.createElement("p");
-            cost.innerHTML = `<strong>Cost: </strong><div class="furniture-text">${price}</div>`;
+            cost.innerHTML = `<strong>Cost: </strong><div class="furniture-text">$${price}</div>`;
             furniture.appendChild(cost);
 
             const contactinfo = document.createElement("p");
             contactinfo.innerHTML = `<strong>Contact: </strong><div class="furniture-text">${contact}</div>`;
             furniture.appendChild(contactinfo);
-            
+
+            const linkButton = document.createElement("a");
+            linkButton.href = "purchase.html";
+            var button = document.createElement("button");
+            button.innerHTML = "Buy Now";
+            linkButton.appendChild(button);
+            furniture.appendChild(linkButton); 
+
             listingsContainer.appendChild(furniture);
         }
 
-        for (const item of furniture) {
+        for (const item of buy) {
             addAvailableFurniture(item.src, item.desc, item.price, item.contact);
         }
     });

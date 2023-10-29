@@ -5,6 +5,15 @@
     display: flex;
     padding: 2%;
 }
+.banner {
+    width: 100%;
+    color: #2f7cac;
+    text-align: center;
+    background-size: auto;
+    height: 70px;
+    margin-top: 130px;
+    font-family: 'Arial', sans-serif;
+}
 
 /* navbar selectors */
 .navbar-logo {
@@ -104,8 +113,8 @@
     color: red;
 }
 
-/* media query for screen widths less than 752px */
-@media (max-width: 752px) {
+/* media query for screen widths less than 900px */
+@media (max-width: 900px) {
     .navbar a, .dropdown {
         display: none;
     }

@@ -5,7 +5,6 @@ body {
 
 .available-furniture {
     display: grid;
-    margin-top: 20px;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
@@ -24,7 +23,20 @@ body {
 
 .furniture img {
     max-width: 100%;
+    width: 250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #2f7cac;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 .lightbox-overlay {

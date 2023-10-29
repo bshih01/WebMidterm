@@ -1,39 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
-    <title>RateMyRoom</title>
+    <title>Purchase Successful</title>
+    <style type="text/css">
+        h1 {
+            text-align: center; 
+            padding-top: 325px; 
+            font-size: 50px;
+        }
+        button {
+            display: block; 
+            margin-left: auto; 
+            margin-right: auto; 
+            width: 200px; 
+            height: 50px; 
+            background-color: #2f7cac; 
+            color: white; 
+            border-radius: 10px; 
+            font-size: 17px;
+            text-decoration: none;
+        }
+        button:hover{
+            background-color: #fff; color: #2f7cac;}
+    </style>
 </head>
 <body>
     <nav id="navbarLinks" class="navbar">
         <a href="../index.html" id="logo-link" class="navbar-logo">
             <img src="../media/extras/rmr.png" alt="Site Logo" class="navbar-logo">
         </a>
-    
+
         <a href="../index.html">Home</a>
 
         <a href="aboutUs.html">About Us</a>
-    
         <div class="dropdown">
             <a href="#">Reviews <img class="expand-arrow" src="../media/extras/expand.png"></a>
             <div class="dropdown-content">
                 <a href="ratedorms.html">RateDorms</a>
                 <a href="discussion.html">Discussion</a>
+                <a href="roomtours.html">Room Tours</a>
             </div>
         </div>
-    
+
         <div class="dropdown">
             <a href="#">Market <img class="expand-arrow" src="../media/extras/expand.png"></a>
             <div class="dropdown-content">
-                <a href="buy.html">Buy</a>
-                <a href="sell.html">Sell</a>
+                <a href="buy.html">Buy Furniture</a>
+                <a href="offcampus.html">Off-Campus Housing</a>
             </div>
         </div>
-        <a href="offcampus.html">Off-Campus Housing</a>
         <a href="contact.html">Contact</a>
-        
+
         <div id="hamburgerMenu" class="hamburger-menu">&#9776;</div>
     </nav>
     
@@ -45,18 +64,33 @@
             <div class="dropdown-content">
                 <a href="ratedorms.html">RateDorms</a>
                 <a href="discussion.html">Discussion</a>
+                <a href="roomtours.html">Room Tours</a>
             </div>
         </div>
         <div class="dropdown">
             <a href="#">Market</a>
             <div class="dropdown-content">
                 <a href="buy.html">Buy</a>
-                <a href="sell.html">Sell</a>
+                <a href="offcampus.html">Off-Campus Housing</a>
             </div>
         </div>
-        <a href="offcampus.html">Off-Campus Housing</a>
         <a href="contact.html">Contact</a>
     </div> 
-    <script type="text/javascript" src="../scripts/navbar.js"></script>
+        <div class="purchase-page">
+            <!-- javascript will populate this with the 15 initial squares -->
+        </div>
+        <script type="text/javascript" src="../scripts/navbar.js"></script>
+        <div id="confetti">
+            <h1>Purchase Successful!</h1>
+            <a href="buy.html">
+                <button id="buy">Continue Shopping</button>
+            </a>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+        <script>
+            const canvas = document.getElementById("confetti");
+            const confetti = new JSConfetti();
+            confetti.addConfetti();
+        </script>
 </body>
 </html>

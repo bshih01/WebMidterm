@@ -4,8 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
-    <link rel="stylesheet" type="text/css" href="../stylesheets/stylereview.css">
     <title>RateMyRoom</title>
+    <style type="text/css">
+        .video-wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            max-height: 315px;
+        }
+        @media screen and (max-width: 800px) {
+            .video-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav id="navbarLinks" class="navbar">
@@ -58,33 +75,35 @@
         </div>
         <a href="contact.html">Contact</a>
     </div> 
-    <div class="title">
-        <h1>Rate Your Housing</h1>
+    <script type="text/javascript" src="../scripts/navbar.js"></script>
+    <div class="banner">
+        <h1>Room Tours</h1>
+    </div>
+    <div class="video-wrapper">
+        <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/iWtXSA0KpjI?si=MPkdM-jTn0lHVUis" 
+        title="YouTube video player" frameborder="0" allow="accelerometer; 
+        autoplay; clipboard-write; encrypted-media; gyroscope; 
+        picture-in-picture; web-share" allowfullscreen></iframe>
+
+        <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/xffFgPBWheI?si=XWqz_xBHSyMmkXLb" 
+        title="YouTube video player" frameborder="0" allow="accelerometer; 
+        autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;
+        web-share" allowfullscreen></iframe>
+
+        <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/iQP2d8zskVo?si=eJqk2PO8f8LqcAN1" 
+        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+        clipboard-write; encrypted-media; gyroscope; picture-in-picture; 
+        web-share" allowfullscreen></iframe>
+
+        <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/BwigCazJqKU?si=0NE1GrrcQJWROa6k" 
+        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+        clipboard-write; encrypted-media; gyroscope; picture-in-picture; 
+        web-share" allowfullscreen></iframe>
     </div>
 
-    <form method='get' action='' id='reviewform'>
-        <!--most of the other elements-->
-        <script type="text/javascript" src="reviewform.js"></script>
-
-        <!--slider for rating-->
-        
-        <div class="slidecontainer">
-            <label for ='range'>How would you rate your housing?</label> <br>
-            <input type="range" min="1" max="5" value="3" class="slider" id="rating">
-        </div>
-        <br>
-        <!--comments area-->
-        <div class = "comments">
-            <label for="comments">Any comments about your review?</label>
-            <br>
-            <textarea id="comments" name="comments" rows="8" cols="50"
-            placeholder="Write your comments here"></textarea>
-            <br>
-        </div>
-        <input type="submit" value="Submit now">
-    </form>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="../scripts/navbar.js"></script>
-    <script type="text/javascript" src="../scripts/review.js"></script>
 </body>
 </html>
