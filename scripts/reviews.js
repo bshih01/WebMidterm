@@ -1,10 +1,11 @@
+var str="";
 //on or off campus radio buttons
-document.write("<div class='onoff'>Rating on or off campus?<br>");
-document.write("<input type='radio' id='on' name='onoff' value='on'>");
-document.write("<label for='on'>on campus</label><br>");
-document.write("<input type='radio' id='off' name='onoff' value='off'>");
-document.write("<label for='off'>off campus</label>");
-document.write("</div>");
+str+="<div class='onoff'>Rating on or off campus?<br>";
+str+="<input type='radio' id='on' name='onoff' value='on'>";
+str+="<label for='on'>on campus</label><br>";
+str+="<input type='radio' id='off' name='onoff' value='off'>";
+str+="<label for='off'>off campus</label>";
+str+="</div>";
 
 //dorms for on-campus option
 var dorms = ["Court at Professors Row","1023 Beacon Street","1025 Beacon Street",
@@ -18,38 +19,57 @@ var dorms = ["Court at Professors Row","1023 Beacon Street","1025 Beacon Street"
 "11 Teele Avenue", "97 Curtis St","102 Curtis St","146 Curtis St","80 Packard Ave",
 "14 Whitfield Rd","44 Teele Ave","50 Sawyer Ave"]
 
-document.write("<div class = 'dorm'>");
-document.write("<label for='dorms' id='dormsLabel'>Choose which dorm: </label>");
-document.write("<select id='dorms' name='dorms'>");
+str+="<div class = 'dorm'>";
+str+="<label for='dorms' id='dormsLabel'>Choose which dorm: </label>";
+str+="<select id='dorms' name='dorms'>";
+str+="<option value ='' disabled selected>Select a dorm</option>";
 for (i = 0; i < dorms.length-1; i++) {
-    document.write("<option value='"+i+"'>"+dorms[i]+"</option>")
+    str+="<option value='"+i+"'>"+dorms[i]+"</option>";
 }
-document.write("</select>");  
-document.write("</div>");
+str+="</select>";  
+str+="</div>";
 
-document.write("<div class='address'>");
-document.write("<label for='offAddress' id='AddressLabel'>");
-document.write("What's the address of your off-campus housing? </label>");
-document.write("<input type='text' id = 'offAddress' placeholder='Address'>");
-document.write("</div>");
+str+="<div class='address'>";
+str+="<label for='offAddress' id='AddressLabel'>";
+str+="What's the address of your off-campus housing? </label>";
+str+="<input type='text' id = 'offAddress' placeholder='Address'>";
+str+="</div>";
+
+document.getElementById("tophalf").innerHTML = str;
 
 $(document).ready(function() {
-    $('.dorm').hide();
+    $('.dorm').hide();
+    $('.address').hide();
 
-    $('.address').hide();
+    $("#rating").on("input", function() {
+        var sliderValue = $(this).val();
+        $('.slidervalue').text(sliderValue + "/5");
+    });
 
-    $('#on').on('change', function() {
-        $('.dorm').show();
-        $('.address').hide();
-    });
-    $('#off').on('change', function() {
-        $('.dorm').hide();
-        $('.address').show();
- 
-    });
+    var selected= false;
+    $('#on').on('change', function() {
+        $('.dorm').show();
+        $('.address').hide();
+        selected=true;
+    });
+    $('#off').on('change', function() {
+        $('.dorm').hide();
+        $('.address').show();
+        selected = true;
+    });
 
-    $('#reviewform').submit(function() {
-        alert("Form submitted! We'll review your rating before posting it on the website.");
-    });
+    $('#reviewform').submit(function(event) {
+        if (!selected) {
+            alert("Please select on or off-campus housing");
+            event.preventDefault();
+        } else if ($('#on').is(":checked") && document.getElementById("dorms").value == "") {
+            alert("Please select a dorm");
+            event.preventDefault();
+        } else if ($('#off').is(":checked") && $("#offAddress").val() == "") {
+            alert("Please input an off-campus housing address");
+            event.preventDefault();
+        } else {
+            alert("Form submitted! We'll review your rating before posting it on the website.");
+        }
+    });
 });
-

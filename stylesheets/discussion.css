@@ -1,0 +1,97 @@
+*{
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    color: #333;
+    margin: 0;
+}
+
+h1{
+    display: block;
+    color: #2f7cac;
+    margin: auto;
+    text-align: center;
+    padding: 50px;
+}
+
+form {
+    display: block;
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    overflow: auto;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.reviews {
+    display: block;
+    margin: auto;
+    width: 97%;
+    margin-top: 20px;
+}
+
+
+.review {
+    display: inline-block;
+    height: 350px;
+    width: 47%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin: auto;
+    overflow: hidden;
+}
+
+/*dropdown menu*/
+.dropdown {
+    display: block;
+    margin: auto;
+    width: 80%; 
+    font-size: 14px;
+}
+/*dropdown menu size*/
+select {
+    font-size: 14px;
+}
+
+/*submit button*/
+.submit {
+    background-color: #2f7cac;
+    width: 80%;
+    padding:15px;
+    color: #ffffff;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+    margin: auto;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+}
+
+.submit:hover {
+    cursor:pointer;
+    background-color: #0056b3;
+}
+
+@media(max-width: 900px) {
+    .review {
+        height: 380px;
+    }
+}
+
+@media (max-width: 805px) {
+    .reviews{
+        width: 80%;
+    }
+    .review {
+        height: auto;
+        margin-bottom: 5px;
+        width: 100%;
+    }
+}

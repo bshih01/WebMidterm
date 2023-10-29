@@ -1,56 +1,91 @@
 body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-   
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    margin-top: 85px;
+    margin-bottom: 50px;
+    height: 100%   
 }
 
-.title {
-    margin-top: 100px;
-    color: black;
-    font-size: 45px;
-    font-weight: 600;
+.title h1 {
+    display: block;
+    color: #2f7cac;
+    margin: auto;
     text-align: center;
+    padding: 50px;
 }
 
 form {
-    display: block;
-    margin: auto;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 5px;
     text-align: center;
-    max-width: 500px;
-    padding: 5px;
+
 }
 
 input[type="submit"] {
     display: block;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
+    width: 80%;
+    font-size: 16px;
     transition: background-color 0.3s ease;
-    padding: 10px 20px;
+    padding: 15px;
     margin: auto;
-    border: 1px solid #120B46;
-    background-color: #120B46;
-    color: white;
+    margin-bottom: 15px;
+    background-color: #2f7cac;
+    border: 1px solid #d1d1d1;
+    color: #ffffff;
+    cursor: pointer;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
+input[type="text"], textarea {
+    border: 1px solid #d1d1d1;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+ textarea:focus, input[type="text"]:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0,123,255,0.5);
+}
 
 input[type="submit"]:hover {
-    background-color: #444;
+    background-color: #0056b3;
 }
 
 textarea {
-    resize: none;
+    resize: vertical;
+    min-height: 150px;
+    width: 100%;
 }
+
+@media only screen and (max-width: 767px) {
+    body .title
+    {
+        font-size: 20px;
+    }
+}
+
 .onoff, .slidecontainer, .dorm, .comments, .address {
     display: block;
-    width: 385px;
+    width: 80%;
     padding: 20px;
     margin: auto;
     margin-bottom: 20px;
-    border: 2.3px;
-    border-style: solid;
-    border-color: #120B46;
+    border-color: #d1d1d1;
     border-radius: 5px;
     box-shadow: 0 0 5px #ddd;    
+    font-size: 16px;
+
+}
+.onoff:hover, .slidecontainer:hover, .dorm:hover, .comments:hover, .address:hover {
+    box-shadow: 0 0 5px rgba(0,123,255,0.5);
+
 }

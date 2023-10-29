@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/discussion.css">
     <link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
-    <title>RateMyRoom</title>
+    <title>RateMyDorm-Discussion</title>
 </head>
+
 <body>
     <nav id="navbarLinks" class="navbar">
         <a href="../index.html" id="logo-link" class="navbar-logo">
@@ -13,25 +16,27 @@
         </a>
     
         <a href="../index.html">Home</a>
-    
-        <a href="aboutUs.html">About Us</a>
 
+        <a href="aboutUs.html">About Us</a>
+    
         <div class="dropdown">
             <a href="#">Reviews <img class="expand-arrow" src="../media/extras/expand.png"></a>
             <div class="dropdown-content">
                 <a href="ratedorms.html">RateDorms</a>
                 <a href="discussion.html">Discussion</a>
-                <a href="roomtours.html">Room Tours</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="offcampus.html">Off-Campus Housing</a>
             </div>
         </div>
     
         <div class="dropdown">
             <a href="#">Market <img class="expand-arrow" src="../media/extras/expand.png"></a>
             <div class="dropdown-content">
-                <a href="buy.html">Buy Furniture</a>
-                <a href="offcampus.html">Off-Campus Housing</a>
+                <a href="buy.html">Buy</a>
+                <a href="sell.html">Sell</a>
             </div>
         </div>
+    
         <a href="contact.html">Contact</a>
         
         <div id="hamburgerMenu" class="hamburger-menu">&#9776;</div>
@@ -45,18 +50,111 @@
             <div class="dropdown-content">
                 <a href="ratedorms.html">RateDorms</a>
                 <a href="discussion.html">Discussion</a>
-                <a href="roomtours.html">Room Tours</a>
+                <a href="feedback.html">Feedback</a>
             </div>
         </div>
         <div class="dropdown">
             <a href="#">Market</a>
             <div class="dropdown-content">
                 <a href="buy.html">Buy</a>
-                <a href="offcampus.html">Off-Campus Housing</a>
+                <a href="sell.html">Sell</a>
             </div>
         </div>
-        <a href="contact.html">Contact</a>
+        <a href="offcampus.html">Off-Campus Housing</a>
     </div> 
     <script type="text/javascript" src="../scripts/navbar.js"></script>
+
+
+	<script language="javascript">
+        $.get("https://youngseo-yi.github.io/midterm/review.json", function(data) {
+            var reviews = data;
+
+            //make the dropdown for filter
+            var condensedCategories = getCategories(reviews);
+            var dropdownStr = "<select id='drop' name='drop'>";
+            dropdownStr+="<option value ='1'>All</option>";
+            condensedCategories.forEach(function(category,i) {
+                var index = i+2;
+                dropdownStr+= "<option value='"+index+"'>"+category+"</option>"
+            });
+            dropdownStr +="</select>";
+            document.getElementById('dropdown').innerHTML = dropdownStr;
+
+            //write out all the products
+            var str = "<div class='reviews'>";
+			data.forEach(function(review) { 
+				str += "<div class='review "+review.id+"'>"+
+                            "<div class='dorm'>Dorm: " + review.dorm +"</div>" +
+                            "<div class='rating'>Rating: " + review.rating + "/5</div>" +
+                            "<div class='comments'>" + review.comments + "</div>" + 
+                        "</div>";
+			}); 
+            str +='</div>';
+	        document.getElementById('reviews').innerHTML = str;
+
+            //interactible elements
+            $(document).ready(function() {
+                $(".exitWindow").hide();
+
+                $(".submit").click(function() {
+                    $(".exitWindow").show();
+                    var filterChoice = $("#dropdown option:selected").text();
+                    getFilteredReviews(reviews,filterChoice);
+                });
+                //remove the filter window when the X is clicked, and show products
+                $(".exitWindow").click(function() {
+                    $(".exitWindow").hide();
+                    $(".review").show();
+                });
+            });
+        });
+
+        //to get list of all categories; used to make the dropdown menu; returns
+        //an array of all the categories, without any repeats
+        function getCategories (data) {
+            var allCategories = [];
+            data.forEach(function(review) {
+                allCategories.push(review.dorm);
+            });
+            var condensedCategories = [];
+            allCategories.forEach(function(i) {
+                var inCondensed = false;
+                condensedCategories.forEach(function(inCondensedCategories) {
+                    if (i == inCondensedCategories) {
+                        inCondensed = true;
+                    }
+                });
+                if (inCondensed == false) {
+                    condensedCategories.push(i);
+                }
+            });
+            return condensedCategories;
+        }
+        //finds all products with given filtered category, and returns string of
+        //all the products
+        function getFilteredReviews(allReviews, filter) {
+            var items = "";
+            $(".review").show();
+            allReviews.forEach(function(review) {
+                if (review.dorm != filter) {
+                    var tempString = "." + review.id;
+                    $(tempString).hide();
+                } 
+            });
+            if (filter == "All") {
+                $(".review").show();
+                //$(".exitWindow").hide();
+            }
+        }
+	</script>
+    <h1>Discussion Board</h1>
+    
+    <form>Filter for a dorm:
+        <div class="dropdown" id = "dropdown"></div>
+        <div class="submit" id = "submit">Submit</div>
+    </form>
+    <!--<div class="exitWindow" id="exitWindow">X</div>-->
+    <div class="reviews" id = "reviews"></div>
+
 </body>
 </html>

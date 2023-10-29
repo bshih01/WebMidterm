@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
     <link rel="stylesheet" type="text/css" href="../stylesheets/stylereview.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
     <title>RateMyRoom</title>
 </head>
 <body>
@@ -14,25 +14,27 @@
         </a>
     
         <a href="../index.html">Home</a>
-    
-        <a href="aboutUs.html">About Us</a>
 
+        <a href="aboutUs.html">About Us</a>
+    
         <div class="dropdown">
             <a href="#">Reviews <img class="expand-arrow" src="../media/extras/expand.png"></a>
             <div class="dropdown-content">
                 <a href="ratedorms.html">RateDorms</a>
                 <a href="discussion.html">Discussion</a>
-                <a href="roomtours.html">Room Tours</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="offcampus.html">Off-Campus Housing</a>
             </div>
         </div>
     
         <div class="dropdown">
             <a href="#">Market <img class="expand-arrow" src="../media/extras/expand.png"></a>
             <div class="dropdown-content">
-                <a href="buy.html">Buy Furniture</a>
-                <a href="offcampus.html">Off-Campus Housing</a>
+                <a href="buy.html">Buy</a>
+                <a href="sell.html">Sell</a>
             </div>
         </div>
+    
         <a href="contact.html">Contact</a>
         
         <div id="hamburgerMenu" class="hamburger-menu">&#9776;</div>
@@ -46,33 +48,36 @@
             <div class="dropdown-content">
                 <a href="ratedorms.html">RateDorms</a>
                 <a href="discussion.html">Discussion</a>
-                <a href="roomtours.html">Room Tours</a>
+                <a href="feedback.html">Feedback</a>
             </div>
         </div>
         <div class="dropdown">
             <a href="#">Market</a>
             <div class="dropdown-content">
                 <a href="buy.html">Buy</a>
-                <a href="offcampus.html">Off-Campus Housing</a>
+                <a href="sell.html">Sell</a>
             </div>
         </div>
-        <a href="contact.html">Contact</a>
+        <a href="offcampus.html">Off-Campus Housing</a>
     </div> 
+    <script type="text/javascript" src="../scripts/navbar.js"></script>
+
+
     <div class="title">
         <h1>Rate Your Housing</h1>
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <form method='get' action='' id='reviewform'>
         <!--most of the other elements-->
-        <script type="text/javascript" src="reviewform.js"></script>
+        <div class="tophalf" id ="tophalf"></div>
+        <script type="text/javascript" src="../scripts/reviews.js"></script>
 
-        <!--slider for rating-->
-        
+        <!--slider for rating-->        
         <div class="slidecontainer">
             <label for ='range'>How would you rate your housing?</label> <br>
-            <input type="range" min="1" max="5" value="3" class="slider" id="rating">
+            <input type="range" min="0.5" max="5" step=".5" value="3" class="slider" id="rating"> <br>
+            <div class="slidervalue">(0.5 is the worst, 5 is the best)</div>
         </div>
-        <br>
         <!--comments area-->
         <div class = "comments">
             <label for="comments">Any comments about your review?</label>
@@ -83,8 +88,7 @@
         </div>
         <input type="submit" value="Submit now">
     </form>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="../scripts/navbar.js"></script>
-    <script type="text/javascript" src="../scripts/review.js"></script>
+
+    
 </body>
 </html>
