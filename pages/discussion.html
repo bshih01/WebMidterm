@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../stylesheets/discussion.css">
-    <link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/style.css"> 
     <title>RateMyDorm-Discussion</title>
 </head>
 
@@ -78,14 +78,14 @@
                 dropdownStr+= "<option value='"+index+"'>"+category+"</option>"
             });
             dropdownStr +="</select>";
-            document.getElementById('dropdown').innerHTML = dropdownStr;
+            document.getElementById('dropdowndorm').innerHTML = dropdownStr;
 
             //write out all the products
             var str = "<div class='reviews'>";
 			data.forEach(function(review) { 
 				str += "<div class='review "+review.id+"'>"+
                             "<div class='dorm'>Dorm: " + review.dorm +"</div>" +
-                            "<div class='rating'>Rating: " + review.rating + "/5</div>" +
+                            "<div class='rating'>Rating: " + review.rating + "/5</div><br>" +
                             "<div class='comments'>" + review.comments + "</div>" + 
                         "</div>";
 			}); 
@@ -98,7 +98,7 @@
 
                 $(".submit").click(function() {
                     $(".exitWindow").show();
-                    var filterChoice = $("#dropdown option:selected").text();
+                    var filterChoice = $("#dropdowndorm option:selected").text();
                     getFilteredReviews(reviews,filterChoice);
                 });
                 //remove the filter window when the X is clicked, and show products
@@ -150,7 +150,7 @@
     <h1>Discussion Board</h1>
     
     <form>Filter for a dorm:
-        <div class="dropdown" id = "dropdown"></div>
+        <div class="dropdowndorm" id = "dropdowndorm"></div>
         <div class="submit" id = "submit">Submit</div>
     </form>
     <!--<div class="exitWindow" id="exitWindow">X</div>-->
