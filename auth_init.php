@@ -2,6 +2,9 @@
 // Load the database configuration file 
 require_once 'dbConfig.php'; 
  
+header('Access-Control-Allow-Origin: *');
+header('Content-Type: application/json');
+
 // Retrieve JSON from POST body 
 $jsonStr = file_get_contents('php://input'); 
 $jsonObj = json_decode($jsonStr); 
