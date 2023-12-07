@@ -46,14 +46,7 @@
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ request_type:'user_auth', credential: response.credential }),
                 })
-                // .then(response => response.json())
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    } else {
-                        return response.json();
-                    }
-                })
+                .then(response => response.json())
                 .then(data => {
                     if(data.status == 1){
                         let responsePayload = data.pdata;
