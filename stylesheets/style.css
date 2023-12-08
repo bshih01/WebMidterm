@@ -15,6 +15,18 @@
     font-family: 'Arial', sans-serif;
 }
 
+.signIn {
+    color: white;
+    float: right;
+    padding: 27px 16px;
+    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    right: 150px;
+    transform: translateY(-50%);
+    transition: color 0.2s ease-in-out;
+}
+
 /* navbar selectors */
 .navbar-logo {
     float: left;

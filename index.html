@@ -38,9 +38,7 @@
         <div id="hamburgerMenu" class="hamburger-menu">&#9776;</div>
 
         <script>
-            // Credential response handler function
             function handleCredentialResponse(response){
-                // Post JWT token to server-side
                 fetch("auth_init.php", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -51,9 +49,7 @@
                     if(data.status == 1){
                         let responsePayload = data.pdata;
 
-                        // Display the user account data
-                        let profileHTML = '<h3>Welcome '+responsePayload.given_name+'! <a href="javascript:void(0);" onclick="signOut('+responsePayload.sub+');">Sign out</a></h3>';
-                        profileHTML += '<img src="'+responsePayload.picture+'"/><p><b>Auth ID: </b>'+responsePayload.sub+'</p><p><b>Name: </b>'+responsePayload.name+'</p><p><b>Email: </b>'+responsePayload.email+'</p>';
+                        let profileHTML = '<img src="'+responsePayload.picture+responsePayload.given_name+'! <a href="javascript:void(0);" onclick="signOut('+responsePayload.sub+');">Sign out</a></h3>';
                         document.getElementsByClassName("pro-data")[0].innerHTML = profileHTML;
                         
                         document.querySelector("#btnWrap").classList.add("hidden");
@@ -63,14 +59,13 @@
                 .catch(console.error);
             }
 
-            // Sign out the user
             function signOut(authID) {
                 document.getElementsByClassName("pro-data")[0].innerHTML = '';
                 document.querySelector("#btnWrap").classList.remove("hidden");
                 document.querySelector(".pro-data").classList.add("hidden");
             }  
         </script>
-        <div class="loginCon">
+        <div class="loginCon signIn">
             <div id="btnWrap">
                 <div id="g_id_onload"
                     data-client_id="561233987245-ck49ulq7a5p2e7uc1rs3ctb1himr45ad.apps.googleusercontent.com"
