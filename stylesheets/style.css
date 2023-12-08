@@ -126,7 +126,7 @@
 }
 
 /* media query for screen widths less than 900px */
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .navbar a, .dropdown {
         display: none;
     }

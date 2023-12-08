@@ -49,7 +49,8 @@
                     if(data.status == 1){
                         let responsePayload = data.pdata;
 
-                        let profileHTML = '<img src="'+responsePayload.picture+responsePayload.given_name+'! <a href="javascript:void(0);" onclick="signOut('+responsePayload.sub+');">Sign out</a></h3>';
+                        let profileHTML = responsePayload.given_name+'! <a href="javascript:void(0);" onclick="signOut('+responsePayload.sub+');">Sign out</a></h3>';
+                        profileHTML += '<img src="'+responsePayload.picture+'"/><p><b>Name: </b>'+responsePayload.name+'</p>;
                         document.getElementsByClassName("pro-data")[0].innerHTML = profileHTML;
                         
                         document.querySelector("#btnWrap").classList.add("hidden");
